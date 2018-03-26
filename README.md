@@ -1,5 +1,5 @@
 # TRADE
-<P> TRADE is a live cryptocurrency single page application.
+<P> TRADE is a live cryptocurrency single page application written in react.
 
 ### Requirements
 Requires the following software to be installed: Node.js (8.9 +)
