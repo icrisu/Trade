@@ -1,0 +1,31 @@
+@import 'settings.scss';
+@import 'colors.scss';
+.topbar {
+    position: fixed; left: 0px; top: 0px; z-index: 1000; width: 100%;
+    height: #{($topbarHeight) + 'px'};
+    background: #{ $topbarBackgroundColor };
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(173,173,173,0.31);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(173,173,173,0.31);
+    box-shadow: 0px 2px 2px 0px rgba(173,173,173,0.31);
+
+    .open-menu {
+        margin-top: 2px;
+    }
+    .top-widgets {
+        padding: 0px #{$tobbarPadding}px;
+        width: 40%;
+    }
+    @media screen and (max-width: 767px) {
+        .top-widgets {
+            width: 70%;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        .top-widgets {
+            width: 60%;
+        }
+    }      
+    .search-widget {
+        margin-top: 7px;
+    }        
+}

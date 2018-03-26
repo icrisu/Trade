@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116123055-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116123055-1');
+</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/assets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/assets/animate.css">
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/assets/font-icons/style.css">
+    <meta name="keywords" content="	bitcoin, bitcoin widget, blockchain, compare, crypto compare, cryptocurrency, ethereum, ethereum price, live cryptocurrency, live price, market cap" />
+    <meta name="description" content="TRADE - a live cryptocurrency single page application, brings you all the latest streaming pricing data in the world of cryptocurrencies.">    
+    <title>TRADE - Live cryptocurrency SPA, prices, trades, volumes, compare, favorites</title>
+
+    <script>
+            window.TRADE_LOCALES = {
+            "menu_feed_label": "Crypto feed",
+            "menu_favourites_label": "My favourites",
+            "menu_compare_label": "Crypto compare",
+            "menu_portfolio_label": "Portfolio",
+            "my_favorites": "My favourites",
+            "crypto_compare": "Crypto compare",
+            "portfolio_page_title": "My portfolio",
+            "currencyName": "Name",
+            "marketCap": "Market Cap",
+            "currencyPrice": "Price",
+            "vwap": "24hour VWAP",
+            "supply": "Available supply",
+            "hrVolume": "24 Hour Volume",
+            "percentTrend": "%24hr",
+            "one_day_history": "One day",
+            "seven_days_history": "Seven days",
+            "one_month_history": "One month",
+            "three_months_history": "Three months",
+            "six_months_history": "Six months",
+            "twelve_months_history": "Twelve Months",
+            "currency_history": "Currency history",
+            "currency_info": "Currency info",
+            "recent_trades": "live trades",
+            "watchlist_is_empty": "Your favourites list is empty",
+            "remove_from_favorites": "Remove from favorites",
+            "add_to_favorites": "Save to favorites",
+            "currency_single_buy_label": "Buy / Sell",
+            "currency_single_history_menu_title": "History",
+            "currency_single_live_menu_title": "Live trades",
+            "compare_max_warn": "You can only add four currencies to compare list!",
+            "compare_remve_alert": "Are you sure you want to remove this currency from the list?",
+            "currency_single_24_market_cap": "Market Cap",
+            "currency_single_24_hour_vol": "24 Hour Volume",
+            "currency_single_available_supply": "Available Supply",
+            "filter_label_up": "asc",
+            "filter_label_down": "desc",
+            "crypto_compare_info": "Use the searchbox above to add currencies to compare list.",
+            "pagination_label_one": "Page",
+            "pagination_label_two": "of",
+            "item_trade_referral_label": "Trade",
+            "portfolio_page_create_new": "Create new",
+            "remove_portfolio_item": "Are you sure you want to remove this item?",
+            "search_box_placeholder_1": "Search & add crypto currency",
+            "search_box_placeholder_2": "Search currency ...",
+            "portfolio_label_no_currency": "No currency selected ...",
+            "portfolio_eneter_amount": "Enter amount",
+            "portfolio_eneter_label": "Enter label",
+            "portfolio_modal_title": "Create portfolio",
+            "modal_accept_label": "Save",
+            "modal_cancel_label": "Cancel",
+            "top_bar_filters_label": "Sort"
+         };
+            window.TRADE_INSIDE_APP_COLORS = {
+            "favourites_heart_color": "#6b717e",
+            "charts_lines_primary_color": "#2c98f0",
+            "charts_lines_second_color": "#fd61ab",
+            "charts_lines_third_color": "#fed4a2",
+            "charts_lines_fourth_color": "#c1f680",
+            "topbar_buttons_color": "#FFFFFF"
+         };
+            window.TRADE_INSIDE_APP_SETTINGS = {
+            "referral_exchange_url": "https://www.kraken.com/",
+            "has_adsense_menu": true,
+            "menu_adsense_ad_client": "ca-pub-2176573140422894",
+            "menu_adsense_ad_slot": "3057292190",
+            "has_adsense_single": false,
+            "single_adsense_ad_client": "ca-pub-2176573140422894",
+            "single_adsense_ad_slot": "4070581847"
+         };
+    </script>
+
+<!--cookies-->
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+var CookiePopup;
+window.addEventListener("load", function() {
+window.cookieconsent.initialise(
+{
+    "palette": {
+    "popup": {
+        "background": "#f2f2f3"
+    },
+    "button": {
+        "background": "#2296f3",
+        "text": "#f2f2f2"
+    }
+    },
+    "onStatusChange": function(status) {
+        if (!this.hasConsented()) {
+            setTimeout(function() {
+                if (CookiePopup) {
+                    CookiePopup.open()
+                }
+            }, 2000)
+        } else {
+            window.cookiesOK = true;
+        }
+    },   
+    "onInitialise": function (status) {
+    var type = this.options.type;
+    var didConsent = this.hasConsented();
+    if (didConsent === true) {
+        window.cookiesOK = true;
+    } else {
+        setTimeout(function() {
+            if (CookiePopup) {
+                CookiePopup.open()
+            }
+        }, 2000)
+    }
+    },  
+    "position": "bottom-right",
+    "type": "opt-out",
+    "content": {
+    "message": "Our website uses cookies to enhance your overall experience, other tracking technologies to analyze your use (ie. pages visited) and targeting cookies for our promotional and marketing efforts. If you click the 'Accept' button you may continue navigating the website.",
+    "dismiss": "Accept!"
+    }
+}
+,function(popup) {
+    CookiePopup = popup;
+}
+)});
+</script>
+<!--/cookies-->
+<style>
+    .cc-floating .cc-message {
+        font-size: 13px;
+    }
+</style>
+
+
+  </head>
+  <body>
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="container"></div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,296 @@
+@import 'settings.scss';
+@import 'colors.scss';
+.page-layout {
+    height: 100%;
+    padding-top: #{($topbarHeight) + 'px'};
+    
+    .inpage-title {
+        font-size: 17px;
+        font-weight: 600;
+        margin-bottom: 40px;
+    }
+    .inpage-small-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+    .page-section {
+        margin: 30px 0px;
+    }
+    .page-content-with-scroll {
+        height: 100%;
+        height: calc(100% - #{($pageTopBarHeight) + 'px'});
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        .page-content {
+            padding: 10px #{$contentPadding}px;
+            position: relative;
+        }
+    }    
+}
+
+/* currency single page */
+.currency-single-page {
+    .coin-info {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+    .live-trades {
+        font-size: 13px;
+        overflow: hidden;
+        max-height: 375px;
+        .trade {
+            padding: 5px 0px;
+            &.trade-highlight {
+                background: #{$mainBackgroundColor};
+            }
+        }
+    }
+}
+
+/* crypto compare page */ 
+.crypto-compare-page {
+    .search-ui {
+        text-align: center;
+        .search-widget {
+            display: inline-block;
+            margin-right: 20px;
+            max-width: 400px;
+            float: none;
+            margin-top: 7px;
+            input {
+                background: #FFFFFF;
+                padding: 8px 11px;
+            }
+            input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                font-style: italic;
+            }
+            input::-moz-placeholder { /* Firefox 19+ */
+                font-style: italic;
+            }
+            input:-ms-input-placeholder { /* IE 10+ */
+                font-style: italic;
+            }
+            input:-moz-placeholder { /* Firefox 18- */
+                font-style: italic;
+            }        
+            .search-icon {
+                top: 8px;
+            }
+        }
+    }
+    .compare-search-info {
+        display: inline-block;
+    }
+    .added-currency {
+        margin-top: 20px;
+        .currency-remove {
+            margin: 10px 0px;
+            .icon-delete {
+                margin-right: 6px;
+            }
+        }
+    }
+}
+
+/* main feed page */
+.main-feed-page {
+    .page-content-with-scroll {
+        height: calc(100% - #{($pageTopBarHeight + 40) + 'px'});
+    }
+    .navigation {
+        position: absolute; left: 0px; bottom: 0px; z-index: 123;
+        width: 100%; height: 40px;
+        background: #{$mainBackgroundColor};
+        text-align: right;
+        padding: 0px 40px;
+        -webkit-box-shadow: 0px -2px 2px 0px rgba(184,184,184,0.37);
+        -moz-box-shadow: 0px -2px 2px 0px rgba(184,184,184,0.37);
+        box-shadow: 0px -2px 2px 0px rgba(184,184,184,0.37);
+        .pagination-widget {
+            display: inline-block;
+            position: relative; top: -3px;
+        }
+    }
+}
+
+/* feed item */
+.feed-item {
+    height: auto;
+    padding: 16px 10px;
+    font-size: 15px;   
+    background: #FFFFFF;
+    border-bottom-style: solid;
+    border-color: #eaeaea;
+    border-width: 1px;    
+    .trend-ico {
+        margin-right: 6px;
+    }
+    .label {
+        display: none;
+        margin-right: 10px;
+        font-weight: 600;
+    }
+    .realtime-info {
+        position: absolute; left: 0px; width: 100%; height: 100%;
+    }
+    @media screen and (max-width: 767px) {
+        .label {
+            display: inline-block;
+        }
+        .row > div {
+            margin: 5px 0px;
+        }
+    }
+    .curency-name-ui {
+        text-align: left;
+        div, span {
+            display: inline-block;
+        }
+    }         
+}
+
+/* portfolio page specific */
+.portfolio-page {
+    .add-new-card {
+        padding: 10px;
+        background: #FFFFFF;
+        width: 250px; height: 200px;
+        text-align: center;
+        margin-right: 30px; margin-bottom: 30px;
+        border-radius: 2px;
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(148,148,148,0.14);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(148,148,148,0.14);
+        box-shadow: 0px 0px 10px 0px rgba(148,148,148,0.14);    
+        .create-new {
+            margin-top: 15px;
+        }
+    }
+    .portfolio-card {
+        padding: 10px;
+        background: #FFFFFF;
+        width: 250px; height: 200px;
+        margin-right: 30px; margin-bottom: 30px;   
+        position: relative; 
+        overflow: hidden;
+        border-radius: 2px;
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(148,148,148,0.14);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(148,148,148,0.14);
+        box-shadow: 0px 0px 10px 0px rgba(148,148,148,0.14);
+        .label {
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 600;
+            padding: 0px 18px;
+            margin-top: 33px;        
+            color: #2296f3;     
+            margin-bottom: 20px;           
+        }    
+        .currency-info {
+            text-align: center;
+            text-align: center;
+            margin-bottom: 3px;
+            font-size: 14px;
+            > span {
+                margin-right: 10px;
+            }            
+        }
+        .portfolio-info, .amount-info {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 3px;
+            > span {
+                margin-right: 10px;
+            }             
+        }
+        .amount-info {
+            color: #a0a0a0;
+        }
+        .remove {
+            position: absolute; right: 10px; top: 10px;
+            cursor: pointer;
+        } 
+    }
+}
+
+.page-topbar {
+    height: #{$pageTopBarHeight}px; overflow: hidden;
+    background: #{$mainBackgroundColor};
+    padding: 0px #{$tobbarPadding}px;
+    font-size: 14px;        
+    p {
+        margin: 0;
+    }
+    .title {
+        margin-top: 11px;   
+        font-size: 22px;
+    } 
+    .nav-back {
+        margin-top: 13px;   
+        margin-right: 20px;
+        font-size: 22px;
+    }
+
+    // background: #bc9584;
+
+    &.feed-topbar {
+        font-weight: 600;
+        padding: 0px #{$tobbarPadding + 10}px;
+        .coin-info {
+            padding-top: 10px;
+            overflow: hidden;
+            @media screen and (max-width: 767px) {
+                display: none;
+            }                 
+        }
+    }
+
+    &.currency-topbar {
+        padding-right: 40px;
+        .title {
+            margin-right: 20px;
+        }
+        .single-info-block {
+            font-size: 20px;
+            font-weight: 300;
+            margin-top: 13px;
+            display: block;    
+            margin-right: 20px;
+            .trend-ico {
+                margin-right: 6px;
+            }
+        }    
+        .buy-sell-single {
+            margin-top: 10px;
+            .buy-sell {
+                font-size: 18px;
+                padding: 7px 10px;
+                background: #{$topbarBackgroundColor};
+            }            
+        }     
+    }
+}
+
+.content-card {
+    padding: 15px;
+    background: #FFFFFF;
+    border-radius: 2px;
+    &.no-size {
+        margin-bottom: 20px;
+    }
+}
+
+.trend-positive {
+    color: #{$trendPositive};
+}
+.trend-negative {
+    color: #{$trendNegative};
+}
+.trend-positive-background {
+    background: #{$trendPositive};
+}
+.trend-negative-background {
+    background: #{$trendNegative};
+}

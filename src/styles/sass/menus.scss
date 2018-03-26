@@ -1,0 +1,97 @@
+@import 'settings.scss';
+@import 'colors.scss';
+.main-menu {
+    position: fixed; left: 0px; top: 0px; z-index: 1100;
+    height: 100%;
+    background: #{ $mainMenuBackground };
+    .menu-topbar {
+        height: #{$topbarHeight};
+        .logo-ui {
+            height: 43px; padding: 10px;
+            cursor: pointer;
+            img {
+                height: 100%;
+            }
+        } 
+        .close-menu {
+            position: absolute; right: 8px; top: 2px;
+        }
+    }
+
+    .menu-content {
+        width: 100%;
+        height: calc(100% - #{($topbarHeight) + 'px'});
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .menu-content::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        background-color: #{$mainMenuBackground};
+    }
+    .menu-content::-webkit-scrollbar {
+        width: 6px;
+        background-color: #F5F5F5;                            
+    } 
+    .menu-content::-webkit-scrollbar-thumb {
+        background-color: #888888;
+        border-radius: 2px;
+    }     
+
+    .menu-list {
+        padding: 0; margin: 0; width: 100%;
+        margin-top: 40px;
+        li {
+            display: block;
+            margin-bottom: 5px;
+            a:link {
+                display: block;
+                padding: 7px 20px; position: relative;
+                padding-left: 42px;
+                text-decoration: none;
+                font-weight: 300;
+                font-size: 15px;
+                letter-spacing: 1px;
+                color: #{$menuColor}; 
+                &.active {
+                    color: #{ $menuSelectedColor };
+                }                               
+            }
+            a:visited {
+                color: #{$menuColor};
+                &.active {
+                    color: #{ $menuSelectedColor };
+                }                 
+            }
+            a:hover {
+                color: #{$menuSelectedColor};
+                &.active {
+                    color: #{ $menuSelectedColor };
+                }                 
+            }
+            a:active {
+                color: #{$menuColor};
+                &.active {
+                    color: #{ $menuSelectedColor };
+                }                 
+            }                        
+
+            .active {
+                .active-dot {
+                    display: block;
+                }
+            }
+            .active-dot {
+                display: none;
+                width: 10px; height: 10px; border-radius: 5px;
+                background: #{ $menuSelectedDotColor };
+                position: absolute; left: 16px; top: 12px;
+            }
+        }
+    }
+    &.mobile-menu {
+        position: absolute; width: 100%; height: 100%;
+    }
+}
+.mobile-menu-ui {
+    position: relative;
+}

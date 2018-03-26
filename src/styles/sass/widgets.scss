@@ -1,0 +1,186 @@
+@import 'settings.scss';
+@import 'colors.scss';
+/* seach widget */
+.search-widget {
+    width: 100%;
+    position: relative;
+    .search-input {
+        background: #{$mainBackgroundColor};
+        width: 100%;  
+        outline: none;
+        padding: 6px 11px;
+        font-size: 14px;  
+        border-style: solid;
+        border-color: #eaeaea;
+        border-width: 1px;
+        border-radius: 2px;                      
+    }
+    .search-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        font-style: italic;
+        color: #CCCCCC;
+    }
+    .search-input::-moz-placeholder { /* Firefox 19+ */
+        font-style: italic;
+    }
+    .search-input:-ms-input-placeholder { /* IE 10+ */
+        font-style: italic;
+    }
+    .search-input:-moz-placeholder { /* Firefox 18- */
+        font-style: italic;
+    }     
+    .search-icon {
+        position: absolute;
+        font-size: 20px;
+        top: 7px;
+        right: 3px;            
+    }
+    .search-results {
+        width: 100%; position: absolute; left: 0; top: 37px; z-index: 100000000000000;
+        padding: 0px;
+        background: #FFFFFF;
+        max-height: 400px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        -webkit-box-shadow: 2px 2px 2px 0px rgba(173,173,173,0.31);
+        -moz-box-shadow: 2px 2px 2px 0px rgba(173,173,173,0.31);
+        box-shadow: 2px 2px 2px 0px rgba(173,173,173,0.31);        
+        .result-item {
+            position: relative;
+            display: block;
+            clear: both;
+            padding: 14px 10px;
+            height: 50px;
+            border-bottom-style: solid; border-width: 1px; border-color: #f2f2f2;
+            cursor: pointer;
+            .result-entry {
+                margin-right: 10px;
+                font-size: 15px;
+            }
+            &.no-border {
+                border: none;
+            }
+            .arrow-go {
+                position: absolute; 
+                top: 5px;
+                right: 5px;
+                font-size: 24px;
+            }
+            .trend-positive {
+                color: #{$trendPositive};
+            }
+            .trend-negative {
+                color: #{$trendNegative};
+            }                
+        }
+        .result-item:hover {
+            background: #ebeef4;
+        }
+    }
+    .progress {
+        position: absolute;
+        right: -42px;
+        top: -6px;        
+    }
+}   
+
+/* linear chart */
+.linear-chart {
+    text-align: center;
+    .progress {
+        display: inline-block;
+        background: none;
+    }
+}
+
+.favourite-switch {
+    cursor: pointer;
+    padding-right: 6px;
+    margin-right: 18px;
+    vertical-align: top;
+}
+
+/* topbar filters */
+.topbar-filters {
+    min-width: 280px;
+    padding: 10px;
+    .title {
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    .controls {
+        padding: 10px;
+        text-align: right;
+    }
+    .filter-separator {
+        display: block;
+        height: 1px; background: #CCCCCC;
+        margin: 3px 0px;
+        clear: both;
+        width: 100%;
+    }
+}
+
+.pagination-widget {
+    .info {
+        display: inline-block;
+        margin: 0px 20px;
+        height: 40px;
+        vertical-align: middle;
+        font-size: 15px;
+        color: #{$mainMenuBackground};
+    }
+}
+
+.generic-info {
+    text-align: center;
+    color: #afafaf;
+    margin: 20px;        
+}
+
+.adsense-menu {
+    position: relative;
+    width: 250px;
+    margin: auto;
+    margin-top: 30px;
+}
+.adsense-single-page {
+    position: relative;
+    width: 728px; height: 90px; max-width: 728px; max-height: 90px;
+    margin: auto;
+}
+
+.base-alert-content {
+    .title {
+        font-size: 20px;
+        margin-bottom: 10px;        
+    }
+    .content {
+        font-size: 15px;
+        .card-content {
+            background: #F2f2f2;
+            padding: 20px;
+            .info-text {
+                margin-top: 17px;
+            }
+        }
+        .create-portfolio-content {
+            height: 250px; overflow-y: auto;
+            .search-widget { float: none }
+            .search-results {
+                max-height: 170px;
+            }
+            .selected-currency {
+                padding: 10px; margin: 20px 0px;
+                background: #F2F2F2;
+            }
+        }
+    }
+    .button-actions {
+        margin-top: 23px;
+        text-align: right;
+        .spacer {
+            width: 10px;
+            display: inline-block;
+        }     
+    }
+}
